@@ -75,7 +75,7 @@ class PrivateIngredientsApiTests(TestCase):
 
     def test_update_ingredient(self):
         """Test updating an ingredient."""
-        ingredient = Ingredient.objects.create(self.user, name="Cilantro")
+        ingredient = Ingredient.objects.create(user=self.user, name="Cilantro")
 
         payload = {"name": "Coriander"}
         url = detail_url(ingredient.id)
