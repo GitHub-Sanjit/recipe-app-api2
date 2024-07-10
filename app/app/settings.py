@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from urllib.parse import urlparse
-import dj_database_url
+import dj_database_url  # type: ignore
 import os
 from pathlib import Path
 
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-th&vvmtc=(xf(f-jknxla$5-&0mu1s(z1r4@m!wxz(t6pe27&@"
+SECRET_KEY = "django-insecure-627y6i*e@!+tk_v6j3jn0odhs7m1a11$qq&rk(we6$6rxagq(r"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
