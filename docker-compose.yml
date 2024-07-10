@@ -12,18 +12,14 @@ services:
       - ./app:/app
       - dev-static-data:/vol/web
     command: >
-      sh -c "python manage.py wait_for_db &&
+      sh -c "python manage.py wait_for_db --timeout 60 &&
              python manage.py migrate &&
-             gunicorn app.wsgi:application --bind 0.0.0.0:8000"
+             python manage.py runserver 0.0.0.0:8000"
     environment:
-      - DB_HOST=${DB_HOST}
-      - DB_NAME=${DB_NAME}
-      - DB_USER=${DB_USER}
-      - DB_PASS=${DB_PASS}
-      - DB_PORT=${DB_PORT}
-      - SECRET_KEY=${SECRET_KEY}
-      - DEBUG=${DEBUG}
-      - PORT=8000
+      - DB_HOST=db
+      - DB_NAME=devdb
+      - DB_USER=devuser
+      - DB_PASS=changeme
     depends_on:
       - db
 
