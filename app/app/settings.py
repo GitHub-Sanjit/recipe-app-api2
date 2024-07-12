@@ -86,19 +86,23 @@ WSGI_APPLICATION = "app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
+DATABASES = {
+    "default": dj_database_url.config(
+        default=os.environ.get("DATABASE_URL"),
+    )
+}
 
 # Alternatively, if you want to manually configure the database settings
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DJANGO_DB_NAME"),
-        "USER": os.environ.get("DJANGO_DB_USER"),
-        "PASSWORD": os.environ.get("DJANGO_DB_PASSWORD"),
-        "HOST": os.environ.get("DJANGO_DB_HOST"),
-        "PORT": os.environ.get("DJANGO_DB_PORT"),
-    }
-}
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.environ.get("DJANGO_DB_NAME"),
+#         "USER": os.environ.get("DJANGO_DB_USER"),
+#         "PASSWORD": os.environ.get("DJANGO_DB_PASSWORD"),
+#         "HOST": os.environ.get("DJANGO_DB_HOST"),
+#         "PORT": os.environ.get("DJANGO_DB_PORT"),
+#     }
+# }
 
 
 # Password validation
