@@ -161,3 +161,5 @@ REST_FRAMEWORK = {
 SPECTACULAR_SETTINGS = {
     "COMPONENT_SPLIT_REQUEST": True,
 }
+
+CSRF_TRUSTED_ORIGINS = ["https://recipe-app-api2.onrender.com"]
