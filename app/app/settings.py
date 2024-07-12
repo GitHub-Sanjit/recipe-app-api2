@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+import dj_database_url  # type: ignore
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -85,15 +86,19 @@ WSGI_APPLICATION = "app.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "HOST": os.environ.get("DB_HOST"),
-        "NAME": os.environ.get("DB_NAME"),
-        "USER": os.environ.get("DB_USER"),
-        "PASSWORD": os.environ.get("DB_PASS"),
-    }
-}
+DATABASES = {"default": dj_database_url.config(default=os.environ.get("DATABASE_URL"))}
+
+# Alternatively, if you want to manually configure the database settings
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": os.environ.get("DJANGO_DB_NAME"),
+#         "USER": os.environ.get("DJANGO_DB_USER"),
+#         "PASSWORD": os.environ.get("DJANGO_DB_PASSWORD"),
+#         "HOST": os.environ.get("DJANGO_DB_HOST"),
+#         "PORT": os.environ.get("DJANGO_DB_PORT"),
+#     }
+# }
 
 
 # Password validation
