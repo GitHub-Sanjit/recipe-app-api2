@@ -2,7 +2,7 @@
 
 set -e
 
-./wait-for-db.sh $DJANGO_DB_HOST
+python manage.py wait-for-db.sh $DJANGO_DB_HOST
 python manage.py collectstatic --noinput
 python manage.py migrate
 
