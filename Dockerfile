@@ -1,5 +1,5 @@
-FROM python:3.9-alpine
-LABEL maintainer="sanjit_sarkar"
+FROM python:3.9-alpine3.13
+LABEL maintainer="londonappdeveloper.com"
 
 ENV PYTHONUNBUFFERED 1
 
@@ -36,4 +36,4 @@ ENV PATH="/scripts:/py/bin:$PATH"
 
 USER django-user
 
-CMD ["sh", "/scripts/run.sh"]
+CMD ["run.sh"]
